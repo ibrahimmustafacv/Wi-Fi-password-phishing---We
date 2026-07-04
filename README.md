@@ -19,21 +19,6 @@
 > **This project is designed exclusively for educational environments, authorized penetration testing and security research. Misuse is strictly prohibited and may be illegal.**
 
 ---
-
-## 📖 جدول المحتويات | Table of Contents
-- [🧠 نظرة عامة | About](#-نظرة-عامة--about)
-- [🎓 الغرض التعليمي | Educational Purpose](#-الغرض-التعليمي--educational-purpose)
-- [✨ الميزات | Features](#-الميزات--features)
-- [⚙️ آلية العمل | How It Works](#️-آلية-العمل--how-it-works)
-- [🖥️ متطلبات التشغيل | Requirements](#️-متطلبات-التشغيل--requirements)
-- [🚀 خطوات التثبيت والاستخدام | Installation & Usage](#-خطوات-التثبيت-والاستخدام--installation--usage)
-- [📂 هيكل المشروع | Project Structure](#-هيكل-المشروع--project-structure)
-- [📝 التخصيص | Customization](#-التخصيص--customization)
-- [🤝 المساهمة | Contributing](#-المساهمة--contributing)
-- [📄 الترخيص | License](#-الترخيص--license)
-
----
-
 ## 🧠 نظرة عامة | About
 **Wi‑Fi Password Phishing — WE** هي أداة محاكاة مفتوحة المصدر وموجهة للاختبارات الأمنية، تهدف إلى توضيح كيفية استغلال المهاجمين لنقاط الوصول المزوّرة (Evil Twin) لخداع المستخدمين وسرقة كلمات مرور الشبكات اللاسلكية. تعيد الأداة إنشاء هجوم هندسة اجتماعية واقعي، ما يتيح للطلاب ومسؤولي الشبكات ومختصي الأمن السيبراني فهم هذا التهديد وتدريب أنفسهم على اكتشافه والدفاع ضده.
 
@@ -93,13 +78,4 @@
 
 ## 🚀 خطوات التثبيت والاستخدام | Installation & Usage
 
-```bash
-# استنساخ المستودع
-git clone https://github.com/yourusername/wi-fi-phishing-we.git
-cd wi-fi-phishing-we
-
-# تثبيت الاعتماديات
-pip install -r requirements.txt
-
-# تشغيل الأداة (مع الصلاحيات الجذرية)
-sudo python3 we_phisher.py
+``` قم باتشغيل الملف باشكل محلي وتغير ال API الخاص باتوكن واضافة ID الخاص بك
