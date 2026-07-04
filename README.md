@@ -1,5 +1,9 @@
-# 🔐 Wi-Fi Password Phishing — WE  
-### Educational Wireless Security Awareness Tool
+<p align="center">
+  <img src="Logo.png" alt="Wi-Fi Password Phishing — WE" width="80%" style="max-width: 600px;" />
+</p>
+
+# 🔐 Wi‑Fi Password Phishing — WE  
+### *Educational Wireless Security Awareness Tool*
 
 <p align="center">
   <img src="https://img.shields.io/badge/status-active-brightgreen" alt="Status"/>
@@ -9,51 +13,93 @@
   <img src="https://img.shields.io/badge/purpose-educational%20only-critical" alt="Educational Use"/>
 </p>
 
+---
+
 > ⚠️ **هذا المشروع مُصمّم حصرياً للأغراض التعليمية واختبار الاختراق المصرح به وأبحاث الأمن السيبراني. أي استخدام غير قانوني ممنوع منعاً باتاً وقد يُعرّضك للمساءلة القانونية.**  
 > **This project is designed exclusively for educational environments, authorized penetration testing and security research. Misuse is strictly prohibited and may be illegal.**
 
 ---
 
-## 🧠 About
-**Wi-Fi Password Phishing — WE** is a controlled, open-source simulation tool that demonstrates how attackers can trick users into revealing Wi‑Fi passwords through a rogue access point and captive portal. The tool recreates a realistic social engineering attack vector commonly known as an “evil twin” attack, allowing students, network administrators, and cybersecurity professionals to understand, detect, and defend against such threats.
-
-The **“WE”** in the name references both the target brand (We, the Egyptian telecom operator) and **Wireless Exploitation**, reminding us that knowledge can be a weapon or a shield depending on whose hands it falls into.
-
-The repository includes a ready‑to‑use **captive portal page** (see the template below) that mimics a “300 GB free gift” promotion from We, tricking users into submitting their router password along with other personal data.
-
----
-
-## 🎓 Educational Purpose
-This project was built to serve as a **hands‑on lab** for:
-
-- University cybersecurity courses and ethical hacking training.
-- Corporate security awareness programs (with explicit written authorization).
-- Demonstrating how trivial an evil twin attack can be with common hardware.
-- Helping defenders identify indicators of Wi‑Fi phishing attacks.
-- Testing the susceptibility of employees or students to social engineering in a safe, legal environment.
-
-**Never use this tool against any network or device without prior, written consent from the owner.**
+## 📖 جدول المحتويات | Table of Contents
+- [🧠 نظرة عامة | About](#-نظرة-عامة--about)
+- [🎓 الغرض التعليمي | Educational Purpose](#-الغرض-التعليمي--educational-purpose)
+- [✨ الميزات | Features](#-الميزات--features)
+- [⚙️ آلية العمل | How It Works](#️-آلية-العمل--how-it-works)
+- [🖥️ متطلبات التشغيل | Requirements](#️-متطلبات-التشغيل--requirements)
+- [🚀 خطوات التثبيت والاستخدام | Installation & Usage](#-خطوات-التثبيت-والاستخدام--installation--usage)
+- [📂 هيكل المشروع | Project Structure](#-هيكل-المشروع--project-structure)
+- [📝 التخصيص | Customization](#-التخصيص--customization)
+- [🤝 المساهمة | Contributing](#-المساهمة--contributing)
+- [📄 الترخيص | License](#-الترخيص--license)
 
 ---
 
-## ✨ Features
-- **Evil Twin Access Point Creation** – clones any nearby legitimate Wi‑Fi network.
-- **Automated Deauthentication** – politely disconnects real clients (optional) so they see the fake AP.
-- **Customisable Captive Portal** – includes a realistic “300 GB gift” page in Arabic (We template) that can be replaced with your own.
-- **Password Capture & Logging** – saves submitted credentials in a local, encrypted SQLite database; **never** transmits data to a third party (except for the educational Telegram logging built into the template – see note below).
-- **MAC Address Spoofing** – mimics the original BSSID for increased realism.
-- **Session Recording** – logs all steps for after‑action debriefing.
-- **Headless Mode** – run entirely from the CLI, suitable for automated labs.
-- **Dry‑run / Safe Mode** – simulates the infrastructure without injecting any deauthentication packets.
-- **Clean Exit** – all wireless interfaces are restored to their original state upon `Ctrl+C`.
+## 🧠 نظرة عامة | About
+**Wi‑Fi Password Phishing — WE** هي أداة محاكاة مفتوحة المصدر وموجهة للاختبارات الأمنية، تهدف إلى توضيح كيفية استغلال المهاجمين لنقاط الوصول المزوّرة (Evil Twin) لخداع المستخدمين وسرقة كلمات مرور الشبكات اللاسلكية. تعيد الأداة إنشاء هجوم هندسة اجتماعية واقعي، ما يتيح للطلاب ومسؤولي الشبكات ومختصي الأمن السيبراني فهم هذا التهديد وتدريب أنفسهم على اكتشافه والدفاع ضده.
+
+يشير الحرفان **“WE”** في الاسم إلى العلامة التجارية المستهدفة (شبكة We المصرية) وإلى **Wireless Exploitation**، تذكيراً بأن المعرفة قد تكون سلاحاً أو درعاً بحسب من يستخدمها.
+
+يتضمن المستودع صفحة **بوابة احتجاز** (Captive Portal) جاهزة للاستخدام (انظر النموذج المرفق) تحاكي عرض “هدية 300 جيجابايت مجانية” من We، لخداع المستخدم وإدخال كلمة مرور الراوتر بالإضافة إلى بيانات شخصية أخرى.
 
 ---
 
-## ⚙️ How It Works
-1. **Scan** – The tool scans the air for nearby Wi‑Fi networks and lets you choose a target.
-2. **Clone** – It creates a new access point with the identical SSID and (optionally) the same BSSID using MAC spoofing.
-3. **Deauthenticate** – If enabled, it sends deauthentication frames to legitimate clients, forcing them to reconnect.
-4. **Captive Portal** – Clients who connect to the rogue AP are shown a realistic login page (see the provided template) requesting the Wi‑Fi password under a pretext (e.g., “Your session has expired – please re‑enter your password to receive your free gift”).
-5. **Capture & Report** – Submitted data is stored locally and a summary report is generated for the trainer.
+## 🎓 الغرض التعليمي | Educational Purpose
+صُمم هذا المشروع ليكون **مختبراً عملياً** في:
 
-All steps are logged, making it easy to explain the attack flow during a class or training session.
+- دورات الأمن السيبراني الجامعية وبرامج التدريب على الاختراق الأخلاقي.
+- برامج التوعية الأمنية في المؤسسات (بإذن كتابي صريح).
+- توضيح سهولة تنفيذ هجوم “التوأم الشرير” باستخدام أجهزة شائعة.
+- مساعدة المختصين في التعرف على مؤشرات هجمات التصيّد عبر الواي فاي.
+- اختبار قابلية الموظفين أو الطلاب للوقوع في فخ الهندسة الاجتماعية في بيئة آمنة وقانونية.
+
+**لا تستخدم هذه الأداة أبداً ضد أي شبكة أو جهاز دون الحصول على موافقة مسبقة وكتابية من المالك.**
+
+---
+
+## ✨ الميزات | Features
+
+- **إنشاء نقطة وصول مزوّرة** – استنساخ أي شبكة واي فاي قريبة.
+- **فصل العملاء تلقائياً** – إرسال حزم إنهاء الاتصال (Deauthentication) اختيارياً لإجبار العملاء الحقيقيين على إعادة الاتصال.
+- **بوابة احتجاز قابلة للتخصيص** – تتضمن صفحة “هدية 300 جيجا” باللغة العربية (قالب We) ويمكن استبدالها بصفحتك الخاصة.
+- **التقاط وتسجيل كلمات المرور** – حفظ البيانات المقدمة في قاعدة بيانات SQLite مشفرة محلياً؛ **لا تُرسَل** البيانات إلى أي طرف ثالث (ما عدا خاصية تسجيل الدخول إلى تيليجرام المضمنة في القالب، وهي اختيارية).
+- **انتحال عنوان MAC** – محاكاة BSSID الأصلي لزيادة الواقعية.
+- **تسجيل الجلسات** – تخزين جميع الخطوات لتسهيل مراجعة ما بعد التمرين.
+- **الوضع الصامت (Headless)** – تشغيل كامل من سطر الأوامر، مناسب للمختبرات الآلية.
+- **وضع التجربة الآمن (Dry‑run)** – محاكاة البنية التحتية دون إرسال أي حزم فصل.
+- **إنهاء نظيف** – استعادة واجهات الشبكة اللاسلكية إلى حالتها الأصلية عند الضغط على `Ctrl+C`.
+
+---
+
+## ⚙️ آلية العمل | How It Works
+
+1. **المسح** – تقوم الأداة بمسح الشبكات اللاسلكية القريبة وتتيح لك اختيار الهدف.
+2. **الاستنساخ** – تنشئ نقطة وصول جديدة بنفس SSID، ومع إمكانية استخدام نفس BSSID عبر انتحال MAC.
+3. **فصل العملاء** – إذا تم التفعيل، تُرسل الأداة حزم إنهاء اتصال للعملاء الشرعيين لإجبارهم على إعادة الاتصال.
+4. **بوابة الاحتجاز** – عند اتصال أي عميل بالنقطة المزوّرة، تظهر له صفحة تسجيل دخول واقعية (انظر القالب المرفق) تطلب كلمة مرور الواي فاي بحجة مناسبة (مثل: “انتهت جلسة الاتصال – يرجى إعادة إدخال كلمة المرور للحصول على الهدية المجانية”).
+5. **التقاط البيانات والتقرير** – تُخزَّن البيانات المدخلة محلياً، ويُولَّد تقرير شامل للمدرب.
+
+تُسجَّل جميع الخطوات لتسهيل شرح تدفق الهجوم أثناء المحاضرات أو الدورات التدريبية.
+
+---
+
+## 🖥️ متطلبات التشغيل | Requirements
+
+- نظام Linux (يوصى بـ Kali Linux أو Parrot OS).
+- بطاقة شبكة لاسلكية تدعم وضع المراقبة (Monitor Mode) وإنشاء نقاط وصول.
+- Python 3.6+.
+- حزم Python المطلوبة (مذكورة في `requirements.txt`).
+
+---
+
+## 🚀 خطوات التثبيت والاستخدام | Installation & Usage
+
+```bash
+# استنساخ المستودع
+git clone https://github.com/yourusername/wi-fi-phishing-we.git
+cd wi-fi-phishing-we
+
+# تثبيت الاعتماديات
+pip install -r requirements.txt
+
+# تشغيل الأداة (مع الصلاحيات الجذرية)
+sudo python3 we_phisher.py
