@@ -57,7 +57,3 @@ This project was built to serve as a **hands‑on lab** for:
 5. **Capture & Report** – Submitted data is stored locally and a summary report is generated for the trainer.
 
 All steps are logged, making it easy to explain the attack flow during a class or training session.
-
----
-
-## 📁 Project Structure
