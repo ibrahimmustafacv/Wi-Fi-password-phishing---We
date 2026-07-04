@@ -14,23 +14,6 @@
 
 ---
 
-## 📘 Table of Contents
-- [About](#-about)
-- [Educational Purpose](#-educational-purpose)
-- [Features](#-features)
-- [How It Works](#-how-it-works)
-- [Project Structure](#-project-structure)
-- [Requirements](#-requirements)
-- [Installation](#-installation)
-- [Usage](#-usage)
-- [Captive Portal Template](#-captive-portal-template)
-- [Demo](#-demo)
-- [Ethical & Legal Disclaimer](#-ethical--legal-disclaimer)
-- [Developer](#-developer)
-- [License](#-license)
-
----
-
 ## 🧠 About
 **Wi-Fi Password Phishing — WE** is a controlled, open-source simulation tool that demonstrates how attackers can trick users into revealing Wi‑Fi passwords through a rogue access point and captive portal. The tool recreates a realistic social engineering attack vector commonly known as an “evil twin” attack, allowing students, network administrators, and cybersecurity professionals to understand, detect, and defend against such threats.
 
